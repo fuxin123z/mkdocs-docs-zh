@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="zimo">
+        <link rel="canonical" href="https://mkdocs.zimoapps.com/user-guide/plugins/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>插件 - MkDocs中文文档</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">MkDocs中文文档</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">主页</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">用户指南 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../writing-your-docs/" class="dropdown-item">编写文档</a>
+</li>
+                                    
+<li>
+    <a href="../styling-your-docs/" class="dropdown-item">设置文档样式</a>
+</li>
+                                    
+<li>
+    <a href="../configuration/" class="dropdown-item">配置文件</a>
+</li>
+                                    
+<li>
+    <a href="../deploying-your-docs/" class="dropdown-item">部署文档</a>
+</li>
+                                    
+<li>
+    <a href="../custom-themes/" class="dropdown-item">自定义主题</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">插件</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">关于 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/release-notes/" class="dropdown-item">发行说明</a>
+</li>
+                                    
+<li>
+    <a href="../../about/contributing/" class="dropdown-item">贡献</a>
+</li>
+                                    
+<li>
+    <a href="../../about/license/" class="dropdown-item">许可</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../custom-themes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../about/release-notes/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/zimocode/mkdocs-docs-zh/" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#mkdocs" class="nav-link">MkDocs插件</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">安装插件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">使用插件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">开发插件</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="mkdocs">MkDocs插件<a class="headerlink" href="#mkdocs" title="Permanent link"></a></h1>
+<p>安装，使用和创建MkDocs插件的指南</p>
+<hr />
+<h2 id="_1">安装插件<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
+<p>在使用插件之前，必须将其安装在系统上。 如果您使用的是MkDocs附带的插件，则在安装MkDocs时会安装它。 但是，要安装第三方插件，您需要确定相应的软件包名称并使用<code>pip</code>进行安装：</p>
+<pre><code class="bash">pip install mkdocs-foo-plugin
+</code></pre>
+
+<p>插件成功安装后即可使用。 它只需要在配置文件中<a href="＃using-plugins">启用</a>。</p>
+<h2 id="_2">使用插件<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<p><a href="../configuration/#plugins"><code>plugins</code></a>配置选项应包含构建站点时要使用的插件列表。 每个“插件”必须是分配给插件的字符串名称（请参阅给定插件的文档以确定其“名称”）。 此处列出的插件必须已经<a href="#instalting-plugins">安装</a>。</p>
+<pre><code class="yaml">plugins:
+    - search
+</code></pre>
+
+<p>某些插件可能提供自己的配置选项。 如果要设置任何配置选项，则可以嵌套给定插件支持的任何选项的键/值映射（<code>option_name：option value</code>）。请注意冒号（<code>：</code>）必须遵循插件名称，然后在新行上，选项名称和值必须缩进并用冒号分隔。如果要为单个插件定义多个选项，则必须在单独的行上定义每个选项。</p>
+<pre><code class="yaml">plugins:
+    - search:
+        lang: en
+        foo: bar
+</code></pre>
+
+<p>有关给定插件可用配置选项的信息，请参阅该插件的文档。</p>
+<p>有关默认插件的列表以及如何覆盖它们，请参阅<a href="../configuration/#plugins">配置文件</a>文档。</p>
+<h2 id="_3">开发插件<a class="headerlink" href="#_3" title="Permanent link"></a></h2>
+<p>像MkDocs一样，插件必须用Python编写。 通常期望每个插件将作为单独的Python模块分发，尽管可以在同一模块中定义多个插件。 至少，MkDocs插件必须由<a href="#baseplugin">BasePlugin</a>子类和指向它的<a href="#entry-point">entry point</a>组成。</p>
+<h3 id="baseplugin">BasePlugin<a class="headerlink" href="#baseplugin" title="Permanent link"></a></h3>
+<p><code>mkdocs.plugins.BasePlugin</code>的子类应该定义插件的行为。该类通常包括对构建过程中的特定事件执行的操作以及插件的配置方案。</p>
+<p>所有<code>BasePlugin</code>子类都包含以下属性：</p>
+<h4 id="config_scheme">config_scheme<a class="headerlink" href="#config_scheme" title="Permanent link"></a></h4>
+<dl>
+<dd>
+<p>配置验证实例的元组。 每个项目必须包含一个两项元组，其中第一项是配置选项的字符串名称，第二项是<code>mkdocs.config.config_options.BaseConfigOption</code>或其任何子类的实例。</p>
+<p>例如，以下<code>config_scheme</code>定义了三个配置选项：<code>foo</code>，它接受一个字符串; <code>bar</code>，接受一个整数; 和<code>baz</code>，它接受一个布尔值。</p>
+<pre><code>class MyPlugin(mkdocs.plugins.BasePlugin):
+    config_scheme = (
+        ('foo', mkdocs.config.config_options.Type(mkdocs.utils.string_types, default='a default value')),
+        ('bar', mkdocs.config.config_options.Type(int, default=0)),
+        ('baz', mkdocs.config.config_options.Type(bool, default=True))
+    )
+</code></pre>
+<p>加载用户配置后，将使用上述方案验证配置并填写用户未提供的设置的任何默认值。验证类可以是<code>mkdocs.config.config_options</code>中提供的任何类，也可以是插件中定义的第三方子类。</p>
+<p>用户提供的任何验证失败或未在<code>config_scheme</code>中定义的设置都会引发<code>mkdocs.config.base.ValidationError</code>。</p>
+</dd>
+</dl>
+<h4 id="config">config<a class="headerlink" href="#config" title="Permanent link"></a></h4>
+<dl>
+<dd>插件的配置选项字典，在配置验证完成后由<code>load_config</code>方法填充。 使用此属性可以访问用户提供的选项。<pre><code>def on_pre_build(self, config):
+    if self.config['bool_option']:
+        # implement "bool_option" functionality here...
+</code></pre>
+</dd>
+</dl>
+<p>所有<code>BasePlugin</code>子类都包含以下方法：</p>
+<h4 id="load_configoptions">load_config(options)<a class="headerlink" href="#load_configoptions" title="Permanent link"></a></h4>
+<dl>
+<dd>从选项字典加载配置。 返回<code>（错误，警告）</code>的元组。MkDocs在配置验证期间调用此方法，并且不需要由插件调用。</dd>
+</dl>
+<h4 id="on_event_name">on_&lt;event_name&gt;()<a class="headerlink" href="#on_event_name" title="Permanent link"></a></h4>
+<dl>
+<dd>
+<p>定义特定[事件]行为的可选方法。 插件应该在这些方法中定义它的行为。 将<code>&lt;event_name&gt;</code>替换为事件的实际名称。 例如，<code>pre_build</code>事件将在<code>on_pre_build</code>方法中定义。</p>
+<p>大多数事件接受一个位置参数和各种关键字参数。 通常期望插件修改（或替换）位置参数并返回。 如果没有返回任何内容（该方法返回“None”），则使用原始未修改的对象。简单地提供关键字参数以提供可用于确定如何修改位置参数的上下文和/或供应数据。 接受关键字参数为“** kwargs”是一种好习惯。如果在未来版本的MkDocs中为事件提供了其他关键字，则无需更改您的插件。</p>
+<p>例如，以下事件会向主题配置添加额外的static_template：</p>
+<pre><code>class MyPlugin(BasePlugin):
+    def on_config(self, config, **kwargs):
+        config['theme'].static_templates.add('my_template.html')
+        return config
+</code></pre>
+</dd>
+</dl>
+<h3 id="_4">事件<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
+<p>有三种事件：[全局事件]，[页面事件]和[模板事件]。</p>
+<h4 id="_5">全局事件<a class="headerlink" href="#_5" title="Permanent link"></a></h4>
+<p>在构建过程的开始或结束时，每个构建都会调用一次全局事件。在这些事件中所做的任何更改都将对整个站点产生全局影响。</p>
+<h5 id="on_serve">on_serve<a class="headerlink" href="#on_serve" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>只有在开发过程中使用<code>serve</code>命令时才会调用<code>serve</code>事件。 它传递给<code>Server</code>实例，可以在激活之前进行修改。 例如，可以将附加文件或目录添加到“监视”文件列表中以进行自动重新加载。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>server:</strong> <code>livereload.Server</code>的实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd><code>livereload.Server</code>的实例</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_config">on_config<a class="headerlink" href="#on_config" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p><code>config</code>事件是第一个在构建时调用的事件，在加载和验证用户配置后立即运行。 应在此处对配置进行任何更改。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>全局配置对象</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_pre_build">on_pre_build<a class="headerlink" href="#on_pre_build" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p><code>pre_build</code>事件不会改变任何变量。 使用此事件可以调用预构建脚本。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>config:</strong> 全局配置对象</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_files">on_files<a class="headerlink" href="#on_files" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>从<code>docs_dir</code>填充文件集合后调用<code>files</code>事件。 使用此事件可以添加，删除或更改集合中的文件。 请注意，Page对象尚未与集合中的文件对象关联。 使用[页面事件]来处理页面特定数据。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>files:</strong> 全局配置对象</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>全局文件集合</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_nav">on_nav<a class="headerlink" href="#on_nav" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>创建站点导航后会调用<code>nav</code>事件，并可用于更改站点导航。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>nav:</strong> 全局导航对象</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>files:</strong> 全局文件集合</dd>
+<dt>Returns:</dt>
+<dd>全局导航对象</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_env">on_env<a class="headerlink" href="#on_env" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在创建Jinja模板环境之后调用<code>env</code>事件，并且可以使用它来改变Jinja环境。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>env:</strong> 全局Jinja环境</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>files:</strong> 全局文件集合</dd>
+<dt>Returns:</dt>
+<dd>全局Jinja环境</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_post_build">on_post_build<a class="headerlink" href="#on_post_build" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p><code>post_build</code>事件不会改变任何变量。 使用此事件来调用构建后脚本。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>config:</strong> 全局配置对象</dd>
+</dl>
+</dd>
+</dl>
+<h4 id="_6">模板事件<a class="headerlink" href="#_6" title="Permanent link"></a></h4>
+<p>为每个非页面模板调用一次模板事件。 将为<a href="../configuration/#extra_templates">extra_templates</a>配置设置中定义的每个模板以及主题中定义的任何<a href="../configuration/#static_templates">static_templates</a>调用每个模板事件。 所有模板事件在<a href="#on_env">env</a>事件之后和任何[页面事件]之前调用。</p>
+<h5 id="on_pre_template">on_pre_template<a class="headerlink" href="#on_pre_template" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>加载主题模板后立即调用<code>pre_template</code>事件，可用于更改模板的内容。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>template</strong>: 模板内容为字符串</dd>
+<dd><strong>template_name</strong>: 模板的字符串文件名</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>模板内容为字符串</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_template_context">on_template_context<a class="headerlink" href="#on_template_context" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在为主题模板创建上下文之后立即调用<code>template_context</code>事件，并且可以仅使用该事件来更改该特定模板的上下文。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>context</strong>: 模板上下文变量的字典</dd>
+<dd><strong>template_name</strong>: 模板的字符串文件名</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>模板上下文变量的字典</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_post_template">on_post_template<a class="headerlink" href="#on_post_template" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p><code>post_template</code>事件在渲染模板后调用，但在写入光盘之前调用，可用于更改模板的输出。如果返回空字符串，则跳过该模板，并且没有任何内容写入光盘。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>output_content</strong>: 将呈现的模板输出为字符串</dd>
+<dd><strong>template_name</strong>: 模板的字符串文件名</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>将呈现的模板输出为字符串</dd>
+</dl>
+</dd>
+</dl>
+<h4 id="_7">页面事件<a class="headerlink" href="#_7" title="Permanent link"></a></h4>
+<p>对于网站中包含的每个Markdown页面，都会调用一次页面事件。 所有页面事件在<a href="#on_post_template">post_template</a>事件之后和<a href="#on_post_build">post_build</a>事件之前调用。</p>
+<h5 id="on_pre_page">on_pre_page<a class="headerlink" href="#on_pre_page" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在对主题页面执行任何操作之前调用<code>pre_page</code>事件，并且可以使用它来更改<code>Page</code>实例。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code> 的实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>files:</strong> 全局文件集合</dd>
+<dt>Returns:</dt>
+<dd><code>mkdocs.nav.Page</code> 实例</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_page_read_source">on_page_read_source<a class="headerlink" href="#on_page_read_source" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p><code>on_page_read_source</code>事件可以替换默认机制，以从文件系统中读取页面源的内容。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code>实列</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>页面的原始源作为unicode字符串。 如果返回“None”，则将执行文件的默认加载。</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_page_markdown">on_page_markdown<a class="headerlink" href="#on_page_markdown" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在从文件加载页面标记后，调用<code>page_markdown</code>事件，可用于更改Markdown源文本。元数据已被剥离，此时可以作为“page.meta”使用。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>markdown:</strong> Markdown源文本作为字符串</dd>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code>实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>files:</strong> 全局文件集合</dd>
+<dt>Returns:</dt>
+<dd>Markdown源文本作为字符串</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_page_content">on_page_content<a class="headerlink" href="#on_page_content" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在将Markdown文本呈现为HTML（但在传递给模板之前）之后调用<code>page_content</code>事件，并且可以使用该事件来更改页面的HTML主体。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>html:</strong> 从Markdown源呈现的HTML作为字符串</dd>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code>实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>files:</strong> 全局文件集合</dd>
+<dt>Returns:</dt>
+<dd>从Markdown源呈现的HTML作为字符串</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_page_context">on_page_context<a class="headerlink" href="#on_page_context" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在创建页面的上下文之后调用<code>page_context</code>事件，并且该事件可用于仅更改该特定页面的上下文。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>context</strong>: 模板上下文变量的字典</dd>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code>实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dd><strong>nav:</strong> 全局导航对象</dd>
+<dt>Returns:</dt>
+<dd>模板上下文变量的字典</dd>
+</dl>
+</dd>
+</dl>
+<h5 id="on_post_page">on_post_page<a class="headerlink" href="#on_post_page" title="Permanent link"></a></h5>
+<dl>
+<dd>
+<p>在呈现模板之后，但在将其写入光盘之前调用<code>post_page</code>事件，并且可以使用该事件来改变页面的输出。 如果返回空字符串，则跳过该页面并且不会将任何内容写入光盘。</p>
+<dl>
+<dt>Parameters:</dt>
+<dd><strong>output:</strong> 将呈现的模板输出为字符串</dd>
+<dd><strong>page:</strong> <code>mkdocs.nav.Page</code>实例</dd>
+<dd><strong>config:</strong> 全局配置对象</dd>
+<dt>Returns:</dt>
+<dd>将呈现的模板输出为字符串</dd>
+</dl>
+</dd>
+</dl>
+<h3 id="entry-point">Entry Point<a class="headerlink" href="#entry-point" title="Permanent link"></a></h3>
+<p>插件需要打包为Python库（分布在PyPI上，与MkDocs分开），每个插件必须通过setuptools entry_point注册为插件。 将以下内容添加到<code>setup.py</code>脚本中：</p>
+<pre><code class="python">entry_points={
+    'mkdocs.plugins': [
+        'pluginname = path.to.some_plugin:SomePluginClass',
+    ]
+}
+</code></pre>
+
+<p><code>pluginname</code>将是用户使用的名称（在配置文件中）；<code>path.to.some_plugin：SomePluginClass</code>将是可导入的插件本身（<code>from path.to.some_plugin import SomePluginClass</code>）其中<code>SomePluginClass</code>是 <a href="#baseplugin">BasePlugin</a>的子类，定义插件行为。 当然，多个插件类可以存在于同一个模块中。 只需将每个定义为单独的entry_point即可。</p>
+<pre><code class="python">entry_points={
+    'mkdocs.plugins': [
+        'featureA = path.to.my_plugins:PluginA',
+        'featureB = path.to.my_plugins:PluginB'
+    ]
+}
+</code></pre>
+
+<p>请注意，注册插件不会激活它。 如果通过配置，用户仍然需要告诉MkDocs使用。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>. <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备19036239号</a></p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"next": 78, "search": 83, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

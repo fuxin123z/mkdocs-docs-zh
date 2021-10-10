@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="zimo">
+        <link rel="canonical" href="https://mkdocs.zimoapps.com/user-guide/styling-your-docs/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>设置文档样式 - MkDocs中文文档</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link href="../../css/extra.css" rel="stylesheet">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/django.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">MkDocs中文文档</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">主页</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">用户指南 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../writing-your-docs/" class="dropdown-item">编写文档</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">设置文档样式</a>
+</li>
+                                    
+<li>
+    <a href="../configuration/" class="dropdown-item">配置文件</a>
+</li>
+                                    
+<li>
+    <a href="../deploying-your-docs/" class="dropdown-item">部署文档</a>
+</li>
+                                    
+<li>
+    <a href="../custom-themes/" class="dropdown-item">自定义主题</a>
+</li>
+                                    
+<li>
+    <a href="../plugins/" class="dropdown-item">插件</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">关于 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../about/release-notes/" class="dropdown-item">发行说明</a>
+</li>
+                                    
+<li>
+    <a href="../../about/contributing/" class="dropdown-item">贡献</a>
+</li>
+                                    
+<li>
+    <a href="../../about/license/" class="dropdown-item">许可</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../writing-your-docs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../configuration/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/zimocode/mkdocs-docs-zh/" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">设置文档样式</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">内置主题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_4" class="nav-link">自定义主题</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">设置文档样式<a class="headerlink" href="#_1" title="Permanent link"></a></h1>
+<p>如何设置文档的样式和主题。</p>
+<hr />
+<p>MkDocs包括一些<a href="#built-in-themes">内置主题</a>以及各种[第三方主题]，所有这些都可以使用<a href="#using-the-docs_dir">额外的CSS或JavaScript</a>轻松定制，或者覆盖主题的<a href="../configuration/#custom_dir">custom_dir</a>。 您也可以为你的文档从头开始创建自己的<a href="../custom-themes/">自定义主题</a>。</p>
+<p>要使用MkDocs中包含的主题，只需将其添加到您的<code>mkdocs.yml</code>配置文件中。</p>
+<pre><code>theme: readthedocs
+</code></pre>
+<p>使用下面的<a href="#built-in-themes">内置主题</a>中列出的任一一种替换掉<a href="#readthedocs"><code>readthedocs</code></a>。</p>
+<p>要创建新的自定义主题，请参阅<a href="../custom-themes/">自定义主题</a>[custom theme]页面，或者更多地自定义现有主题，请参阅下面的<a href="#customizing-a-theme">自定义主题</a>部分。</p>
+<h2 id="_2">内置主题<a class="headerlink" href="#_2" title="Permanent link"></a></h2>
+<h3 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link"></a></h3>
+<p>MkDocs的默认主题，使用修改过的<a href="https://getbootstrap.com/">Bootstrap</a>构建而成，支持MkDocs的大部分功能。官方只支持两级导航。参见 <a class="gh-link gh-issue" href="https://github.com/mkdocs/mkdocs/issues/1107" title="GitHub Issue mkdocs/mkdocs #1107">#1107</a>）</p>
+<p><img alt="mkdocs" src="../../img/mkdocs.png" /></p>
+<p>除了默认的[主题配置选项]之外，<code>mkdocs</code>主题还支持以下选项：</p>
+<ul>
+<li>
+<p><strong><code>highlightjs</code></strong>：JavaScript库在代码块中突出显示源代码。 默认值：<code>True</code>。</p>
+</li>
+<li>
+<p><strong><code>hljs_style</code></strong>：highlight.js库提供79种不同的[样式]（颜色变化），用于突出显示代码块中的源代码。 将其设置为所需样式的名称。 默认值：<code>github</code>。</p>
+</li>
+<li>
+<p><strong><code>hljs_languages</code></strong>：them.默认情况下，highlight.js仅支持23种常用语言。在此列出额外需要支持的语言。</p>
+<pre><code>theme:
+    name: mkdocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
+</code></pre>
+</li>
+<li>
+<p><strong><code>shortcuts</code></strong>：定义键盘快捷键。</p>
+<pre><code>theme:
+    name: mkdocs
+    shortcuts:
+        help: 191    # ?
+        next: 78     # n
+        previous: 80 # p
+        search: 83   # s
+</code></pre>
+<p>所有值都是数字键代码。 最好使用所有键盘上都有的键。 您可以使用<a href="https://keycode.info/">https://keycode.info/</a>来确定给定的键的代码。</p>
+<ul>
+<li>
+<p><strong><code>help</code></strong>：显示一个列出键盘快捷键的帮助模式。默认：<code>191</code>（＆quest;）</p>
+</li>
+<li>
+<p><strong><code>next</code></strong>：导航到“下一页”。 默认值：<code>78</code>（n）</p>
+</li>
+<li>
+<p><strong><code>previous</code></strong>：导航到“上一页”。 默认值：<code>80</code>（p）</p>
+</li>
+<li>
+<p><strong><code>search</code></strong>：显示搜索模式。 默认值：<code>83</code>（s）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="readthedocs">readthedocs<a class="headerlink" href="#readthedocs" title="Permanent link"></a></h3>
+<p><a href="https://readthedocs.org/">Read the Docs</a>服务使用的默认主题的克隆，它提供与其父主题相同的受限制功能集。 与其父主题一样，仅支持两个级别的导航。</p>
+<p><img alt="ReadTheDocs" src="../../img/readthedocs.png" /></p>
+<p>除了默认的[主题配置选项]之外，<code>readthedocs</code>主题还支持以下选项：</p>
+<ul>
+<li>
+<p><strong><code>highlightjs</code></strong>：使用<a href="https://highlightjs.org/">highlight.js</a> JavaScript库在代码块中突出显示源代码。 默认值：<code>True</code>。</p>
+</li>
+<li>
+<p><strong><code>hljs_languages</code></strong>：默认情况下，highlight.js仅支持23种常用语言。在此列出额外需要支持的语言。</p>
+<pre><code>theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
+</code></pre>
+</li>
+<li>
+<p><strong><code>include_homepage_in_sidebar</code></strong>：列出侧栏菜单中的主页。由于MkDocs要求在“nav”配置选项中列出主页，因此此设置允许在侧栏中包含或排除主页。请注意，站点名称/Logo始终链接到主页。默认：<code>True</code>。</p>
+</li>
+<li>
+<p><strong><code>prev_next_buttons_location</code></strong>：<code>bottom</code>, <code>top</code>, <code>both</code> 和 <code>none</code>中的一个值。相应地显示“下一步”和“上一步”按钮。 默认值：<code>bottom</code>。</p>
+</li>
+<li>
+<p><strong><code>navigation_depth</code></strong>：侧栏中导航树的最大深度。 默认值：<code>4</code>。</p>
+</li>
+<li>
+<p><strong><code>collapse_navigation</code></strong>：仅包含当前页面侧栏中的页面部分标题。 默认值：<code>True</code>。</p>
+</li>
+<li>
+<p><strong><code>titles_only</code></strong>：仅包含侧栏中的页面标题，不包括所有页面的所有节标题。 默认值：<code>False</code>。</p>
+</li>
+<li>
+<p><strong><code>sticky_navigation</code></strong>：如果为True，则在滚动页面时使侧边栏与主页面内容一起滚动。 默认值：<code>True</code>。</p>
+</li>
+</ul>
+<h3 id="_3">第三方主题<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<p>可以在MkDocs<a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">community wiki</a>中找到第三方主题列表。 如果您已创建自己的，请随时将其添加到列表中。</p>
+<h2 id="_4">自定义主题<a class="headerlink" href="#_4" title="Permanent link"></a></h2>
+<p>如果您想对现有主题进行一些调整，则无需从头开始创建自己的主题。对于只需要一些CSS和（或）JavaScript的小调整，您可以使用<a href="#using-the-docs_dir">docs_dir</a>。但是，对于更复杂的自定义（包括覆盖模板），您需要使用主题的<a href="../configuration/#custom_dir">custom_dir</a>设置。</p>
+<h3 id="docs_dir">使用docs_dir<a class="headerlink" href="#docs_dir" title="Permanent link"></a></h3>
+<p><a href="../configuration/#extra_css">extra_css</a>和<a href="../configuration/#extra_javascript">extra_javascript</a>配置选项可用于对现有主题进行调整和自定义。要使用它们，您只需要在[文档目录]中包含CSS或JavaScript文件。</p>
+<p>例如，要更改文档中标题的颜色，请创建一个名为<code>extra.css</code>的文件，并将其放在文档Markdown旁边。 在该文件中添加以下CSS。</p>
+<pre><code class="CSS">h1 {
+  color: red;
+}
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果您使用<a href="../deploying-your-docs/#readthedocs">ReadTheDocs</a>部署文档。 您需要明确列出要包含在配置中的CSS和JavaScript文件。为此，请将以下内容添加到mkdocs.yml中。</p>
+<pre><code>extra_css: [extra.css]
+</code></pre>
+</div>
+<p>在进行这些更改之后，当你运行<code>mkdocs serve</code>后将能看到效果。运行该命令后将会，CSS所做的改变将自动更新。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Any extra CSS or JavaScript files will be added to the generated HTML document after the page content. If you desire to include a JavaScript library, you may have better success including the library by using the theme <a href="../configuration/#custom_dir">custom_dir</a>.
+在页面内容之后，任何额外的CSS或JavaScript文件都将添加到生成的HTML文档中。如果您希望包含JavaScript库，则可以通过使用主题的<a href="../configuration/#custom_dir">custom_dir</a>获得更好支持。</p>
+</div>
+<h3 id="custom_dir">使用主题的custom_dir<a class="headerlink" href="#custom_dir" title="Permanent link"></a></h3>
+<p>主题的<a href="../configuration/#custom_dir">custom_dir</a>配置选项可用于指向覆盖父主题目录中的文件。父主题将是主题中<a href="../configuration/#name">name</a>配置选项定义的主题。 <code>custom_dir</code>中与父主题中的文件同名的任何文件都将替换父主题中同名文件。<code>custom_dir</code>中的任何其他文件都将添加到父主题中。 <code>custom_dir</code>的内容应该镜像父主题的目录结构。您可以包含模板，JavaScript文件，CSS文件，图像，字体或主题中包含的任何其他媒体文件。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>为此，主题的<code>name</code>设置必须设置为已知的已安装主题。 如果<code>name</code>设置被设置为<code>null</code>（或未定义[custom theme]。</p>
+</div>
+<p>For example, the <a href="#mkdocs">mkdocs</a> theme (<a href="https://github.com/mkdocs/mkdocs/tree/master/mkdocs/themes/mkdocs">browse source</a>), contains the following directory structure (in part):
+例如，<a href="#mkdocs">mkdocs</a>主题([查看源代码])包含以下目录结构（部分）：</p>
+<pre><code class="nohighlight">- css\
+- fonts\
+- img\
+  - favicon.ico
+  - grid.png
+- js\
+- 404.html
+- base.html
+- content.html
+- nav-sub.html
+- nav.html
+- toc.html
+</code></pre>
+
+<p>要覆盖该主题中包含的任何文件，请在<code>docs_dir</code>旁边创建一个新目录：</p>
+<pre><code class="bash">mkdir custom_theme
+</code></pre>
+
+<p>然后将您的<code>mkdocs.yml</code>配置文件指向新目录：</p>
+<pre><code class="yaml">theme:
+    name: mkdocs
+    custom_dir: custom_theme/
+</code></pre>
+
+<p>要覆盖404错误页面（“找不到文件”），请将名为<code>404.html</code>的新模板文件添加到<code>custom_theme</code>目录中。 有关可以包含在模板中的内容的信息，请查看用于构建<a href="../custom-themes/">自定义主题</a>的文档。</p>
+<p>要覆盖favicon，您可以在<code>ustom_theme/img/favicon.ico</code>中添加一个新的图标文件。</p>
+<p>要包含JavaScript库，请将库复制到<code>custom_theme/js/</code>目录。</p>
+<p>您的目录结构现在应如下所示：</p>
+<pre><code class="nohighlight">- docs/
+  - index.html
+- custom_theme/
+  - img/
+    - favicon.ico
+  - js/
+    - somelib.js
+  - 404.html
+- config.yml
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>父主题中包含的（在<code>name</code>中定义）但不包括在<code>custom_dir</code>中的任何文件将继续使用。<code>custom_dir</code>只会覆盖/替换父主题中的文件。 如果要删除文件或从头开始构建主题，则应查看用于构建<a href="../custom-themes/">自定义主题</a>的文档。</p>
+</div>
+<h4 id="_5">覆盖模板块<a class="headerlink" href="#_5" title="Permanent link"></a></h4>
+<p>内置主题在模板块中实现了许多部分，可以在<code>main.html</code>模板中单独覆盖。 只需在<code>custom_dir</code>中创建一个<code>main.html</code>模板文件，并在该文件中定义替换块。 只要确保<code>main.html</code>扩展<code>base.html</code>。 例如，要更改MkDocs主题的标题，替换的<code>main.html</code>模板将包含以下内容：</p>
+<pre><code class="django">{% extends &quot;base.html&quot; %}
+
+{% block htmltitle %}
+&lt;title&gt;Custom title goes here&lt;/title&gt;
+{% endblock %}
+</code></pre>
+
+<p>在上面的例子中，将使用自定义<code>main.html</code>文件中定义的<code>htmltitle</code>块代替父主题中定义的默认<code>htmltitle</code>块。 您可以根据需要重新定义任意数量的块，只要这些块在父级中定义即可。 例如，您可以将Google Analytics脚本替换为不同服务的脚本，或者将搜索功能替换为您自己的搜索功能。 您需要查询正在使用的父主题，以确定可以覆盖的块。 MkDocs和ReadTheDocs主题提供以下块：</p>
+<ul>
+<li><code>site_meta</code>：包含文档头中的元标记。</li>
+<li><code>htmltitle</code>：包含文档头中的页面标题。</li>
+<li><code>styles</code>：包含样式表的链接标记。</li>
+<li><code>libs</code>：包含页眉中包含的JavaScript库（jQuery等）。</li>
+<li><code>scripts</code>：包含应在页面加载后执行的JavaScript脚本。</li>
+<li><code>analytics</code>：包含分析脚本。</li>
+<li><code>extrahead</code>：<code>&lt;head&gt;</code>中的空块，用于插入自定义标记/脚本/等。</li>
+<li><code>site_name</code>：包含导航栏中的站点名称。</li>
+<li><code>site_nav</code>：包含导航栏中的站点导航。</li>
+<li><code>search_box</code>：包含导航栏中的搜索框。</li>
+<li><code>next_prev</code>：包含导航栏中的下一个和上一个按钮。</li>
+<li><code>repo</code>：包含导航栏中的GitHub存储库链接。</li>
+<li><code>content</code>：包含页面的页面内容和目录。</li>
+<li><code>footer</code>：包含页脚。</li>
+</ul>
+<p>您可能需要查看源模板文件，以确保您的修改将适用于站点的结构。 有关可在自定义块中使用的变量列表，请参见[模板变量]。 有关块的更完整说明，请参阅[Jinja文档]。</p>
+<h4 id="custom_dir_1">组合custom_dir和模板块<a class="headerlink" href="#custom_dir_1" title="Permanent link"></a></h4>
+<p>将JavaScript库添加到<code>custom_dir</code>将使其可用，但不会将其包含在MkDocs生成的页面中。因此，需要从HTML添加链接到库。</p>
+<p>启动上面的目录结构（截断）：</p>
+<pre><code class="nohighlight">- docs/
+- custom_theme/
+  - js/
+    - somelib.js
+- config.yml
+</code></pre>
+
+<p>一个指向<code>custom_theme/js/somelib.js</code>文件的链接需要添加到模板中。 由于<code>somelib.js</code>是一个JavaScript库，它在逻辑上会进入<code>libs</code>块。 但是，仅包含新脚本的新<code>libs</code>块将替换父模板中定义的块，并且将删除父模板中库的任何链接。 为了避免破坏模板，可以使用<a href="http://jinja.pocoo.org/docs/dev/templates/#super-blocks">super block</a>从块中调用<code>super</code>：</p>
+<pre><code class="django">{% extends &quot;base.html&quot; %}
+
+{% block libs %}
+    {{ super() }}
+    &lt;script src=&quot;{{ base_url }}/js/somelib.js&quot;&gt;&lt;/script&gt;
+{% endblock %}
+</code></pre>
+
+<p>请注意，<a href="../custom-themes/#base_url">base_url</a>模板变量用于确保链接始终相对于当前页面。</p>
+<p>现在生成的页面将包含指向模板提供的库的链接以及<code>custom_dir</code>中包含的库。<code>custom_dir</code>中包含的任何其他CSS文件也是如此。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>. <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备19036239号</a></p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"next": 78, "search": 83, "help": 191, "previous": 80};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
