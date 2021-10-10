@@ -1,423 +1,1002 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="非官方的MkDocs中文文档。">
-        <meta name="author" content="zimo">
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="MkDocs中文文档。">
+      
+      
+      
+        <meta name="author" content="fufu">
+      
+      
         <link rel="canonical" href="https://mkdocs.zimoapps.com/">
-        <link rel="shortcut icon" href="img/favicon.ico">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.2.3">
+    
+    
+      
         <title>MkDocs中文文档</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <link href="css/extra.css" rel="stylesheet">
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    
+      
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/django.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
-
-    <body class="homepage">
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href=".">MkDocs中文文档</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="navitem active">
-                                <a href="." class="nav-link">主页</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">用户指南 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="user-guide/writing-your-docs/" class="dropdown-item">编写文档</a>
-</li>
-                                    
-<li>
-    <a href="user-guide/styling-your-docs/" class="dropdown-item">设置文档样式</a>
-</li>
-                                    
-<li>
-    <a href="user-guide/configuration/" class="dropdown-item">配置文件</a>
-</li>
-                                    
-<li>
-    <a href="user-guide/deploying-your-docs/" class="dropdown-item">部署文档</a>
-</li>
-                                    
-<li>
-    <a href="user-guide/custom-themes/" class="dropdown-item">自定义主题</a>
-</li>
-                                    
-<li>
-    <a href="user-guide/plugins/" class="dropdown-item">插件</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">关于 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="about/release-notes/" class="dropdown-item">发行说明</a>
-</li>
-                                    
-<li>
-    <a href="about/contributing/" class="dropdown-item">贡献</a>
-</li>
-                                    
-<li>
-    <a href="about/license/" class="dropdown-item">许可</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="user-guide/writing-your-docs/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/zimocode/mkdocs-docs-zh/" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#mkdocs" class="nav-link">MkDocs中文文档</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">概述</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_6" class="nav-link">安装</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_9" class="nav-link">入门</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_10" class="nav-link">添加页面</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_11" class="nav-link">主题化我们的文档</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#favicon" class="nav-link">更改Favicon图标</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_12" class="nav-link">生成网站</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_13" class="nav-link">其他命令和选项</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_14" class="nav-link">部署</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_15" class="nav-link">获取帮助</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mkdocs" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="MkDocs中文文档" class="md-header__button md-logo" aria-label="MkDocs中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
-<h1 id="mkdocs">MkDocs中文文档<a class="headerlink" href="#mkdocs" title="Permanent link"></a></h1>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkDocs中文文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              主页
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/zimocode/mkdocs-docs-zh/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="MkDocs中文文档" class="md-nav__button md-logo" aria-label="MkDocs中文文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MkDocs中文文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/zimocode/mkdocs-docs-zh/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          主页
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        主页
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    在任何地方部署
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    很棒的主题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    实时预览你的网站
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    易于定制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    使用包管理器安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    手动安装
+  </a>
+  
+    <nav class="md-nav" aria-label="手动安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    安装Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    安装pip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs_1" class="md-nav__link">
+    安装MkDocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    入门
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    添加页面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    主题化我们的文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#favicon" class="md-nav__link">
+    更改Favicon图标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    生成网站
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    其他命令和选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    获取帮助
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        用户指南
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="用户指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          用户指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/writing-your-docs/" class="md-nav__link">
+        编写文档
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/styling-your-docs/" class="md-nav__link">
+        设置文档样式
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/configuration/" class="md-nav__link">
+        配置文件
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/deploying-your-docs/" class="md-nav__link">
+        部署文档
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/custom-themes/" class="md-nav__link">
+        自定义主题
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/plugins/" class="md-nav__link">
+        插件
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        关于
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/release-notes/" class="md-nav__link">
+        发行说明
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/contributing/" class="md-nav__link">
+        贡献
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/license/" class="md-nav__link">
+        许可
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概述
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    在任何地方部署
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    很棒的主题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    实时预览你的网站
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    易于定制
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    使用包管理器安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    手动安装
+  </a>
+  
+    <nav class="md-nav" aria-label="手动安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    安装Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    安装pip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs_1" class="md-nav__link">
+    安装MkDocs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    入门
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    添加页面
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    主题化我们的文档
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#favicon" class="md-nav__link">
+    更改Favicon图标
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    生成网站
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    其他命令和选项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    获取帮助
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mkdocs">MkDocs中文文档<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h1>
 <p>使用Markdown来构建项目文档</p>
 <hr />
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link"></a></h2>
-<p>MkDocs是一个<strong>快速</strong>、<strong>简单</strong>、<strong>华丽</strong>的静态网站生成器，适用于构建项目文档。文档源文件以Markdown编写，并使用一个YAML文件来进行配置。</p>
-<h3 id="_2">在任何地方部署<a class="headerlink" href="#_2" title="Permanent link"></a></h3>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>MkDocs是一个**快速**、<strong>简单</strong>、**华丽**的静态网站生成器，适用于构建项目文档。文档源文件以Markdown编写，并使用一个YAML文件来进行配置。</p>
+<h3 id="_2">在任何地方部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>MkDocs生成完全静态的HTML网站，你可以将其部署到GitHub pages、Amzzon S3或你自己选择的其它<a href="user-guide/deploying-your-docs/">任意地方</a>。</p>
-<h3 id="_3">很棒的主题<a class="headerlink" href="#_3" title="Permanent link"></a></h3>
+<h3 id="_3">很棒的主题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>MkDocs有一堆很好看的主题。 官方内置了两个主题：<a href="user-guide/styling-your-docs/#mkdocs">mkdocs</a>和<a href="user-guide/styling-your-docs/#readthedocs">readthedocs</a>，也可以从<a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">MkDocs wiki</a>中选择第三方主题，或者<a href="user-guide/custom-themes/">自定义主题</a>。 </p>
-<h3 id="_4">实时预览你的网站<a class="headerlink" href="#_4" title="Permanent link"></a></h3>
+<h3 id="_4">实时预览你的网站<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>当你写作时，内置的开发服务可以帮助你预览显示效果。当文档有改动时，甚至还可以自动载入并刷新你的浏览器。</p>
-<h3 id="_5">易于定制<a class="headerlink" href="#_5" title="Permanent link"></a></h3>
+<h3 id="_5">易于定制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>通过自定义主题，让你的项目文档以你希望的方式呈现。</p>
 <hr />
-<h2 id="_6">安装<a class="headerlink" href="#_6" title="Permanent link"></a></h2>
-<h3 id="_7">使用包管理器安装<a class="headerlink" href="#_7" title="Permanent link"></a></h3>
+<h2 id="_6">安装<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">使用包管理器安装<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>如果你拥有并使用包管理器（例如<a href="https://help.ubuntu.com/community/AptGet/Howto">apt-get</a>，<a href="https://dnf.readthedocs.io/en/latest/index.html">dnf</a>，<a href="https://brew.sh/">homebrew</a>，<a href="http://yum.baseurl.org/">yum</a>，<a href="https://chocolatey.org/">chocolatey</a>等）来在你的系统上安装软件包，那么你可以尝试搜索“MkDocs”软件包，如果有最新版本，则可以使用包管理器来安装（有关详细信息，请查看相应系统的说明文档）。 就这样安装就完成了！ 跳到<a href="＃getting-started">入门</a>。</p>
 <p>如果你的包管理器中没有最新的“MkDocs”软件包，你仍然可以使用软件包管理器来安装“Python”和“pip”。 然后使用pip来<a href="#instalming-mkdocs">安装MkDocs</a>。</p>
-<h3 id="_8">手动安装<a class="headerlink" href="#_8" title="Permanent link"></a></h3>
+<h3 id="_8">手动安装<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>为了手动安装MkDocs，你需要在系统上安装<a href="https://www.python.org/">Python</a>，以及Python包管理器<a href="https://pip.readthedocs.io/en/stable/installing/">pip</a>。你可以使用以下命令来检查是否已经安装了这些软件：</p>
-<pre><code class="bash">$ python --version
-Python 2.7.14
+<div class="highlight"><pre><span></span><code>$ python --version
+Python <span class="m">2</span>.7.14
 $ pip --version
-pip 18.1 from /usr/local/lib/python2.7/site-packages/pip (python 2.7)
-</code></pre>
+pip <span class="m">18</span>.1 from /usr/local/lib/python2.7/site-packages/pip <span class="o">(</span>python <span class="m">2</span>.7<span class="o">)</span>
+</code></pre></div>
 
 <p>MkDocs支持Python2.7.9+、3.4、3.5、3.6、3.7和pypy。</p>
-<h4 id="python">安装Python<a class="headerlink" href="#python" title="Permanent link"></a></h4>
+<h4 id="python">安装Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
 <p>可以通过从<a href="https://www.python.org/downloads/">python.org</a>下载适用于你系统的安装程序并运行它来安装<a href="https://www.python.org/">Python</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果你在Windows上安装Python，请确保选中此框以在安装程序提供此选项时将Python添加到PATH（默认情况下通常是关闭）。</p>
 <p><img alt="Add Python to PATH" src="img/win-py-install.png" /></p>
 </div>
-<h4 id="pip">安装pip<a class="headerlink" href="#pip" title="Permanent link"></a></h4>
+<h4 id="pip">安装pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h4>
 <p>如果你使用的是最新版本的Python，则默认情况下很可能已经安装了Python包管理器<a href="https://pip.readthedocs.io/en/stable/installing/">pip</a>。但是，你可能需要将pip升级到最新版本：</p>
-<pre><code class="bash">pip install --upgrade pip
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install --upgrade pip
+</code></pre></div>
 
 <p>如果你是第一次安装<a href="https://pip.readthedocs.io/en/stable/installing/">pip</a>，下载<a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a>。然后运行以下命令进行安装：</p>
-<pre><code class="bash">python get-pip.py
-</code></pre>
+<div class="highlight"><pre><span></span><code>python get-pip.py
+</code></pre></div>
 
-<h4 id="mkdocs_1">安装MkDocs<a class="headerlink" href="#mkdocs_1" title="Permanent link"></a></h4>
+<h4 id="mkdocs_1">安装MkDocs<a class="headerlink" href="#mkdocs_1" title="Permanent link">&para;</a></h4>
 <p>使用pip安装<code>mkdocs</code>包：</p>
-<pre><code class="bash">pip install mkdocs
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip install mkdocs
+</code></pre></div>
 
 <p>你现在应该能运行安装于系统上的<code>mkdocs</code>命令了。 运行<code>mkdocs --version</code>来检查一切是否正常。</p>
-<pre><code class="bash">$ mkdocs --version
-mkdocs, version 0.15.3
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ mkdocs --version
+mkdocs, version <span class="m">0</span>.15.3
+</code></pre></div>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果你希望为MkDocs安装联机帮助页，<a href="https://github.com/click-contrib/click-man">click-man</a>工具可以为你生成并安装它们。 只需运行以下两个命令：</p>
-<pre><code>pip install click-man
+<div class="codehilite"><pre><span></span><code>pip install click-man
 click-man --target path/to/man/pages mkdocs
-</code></pre>
+</code></pre></div>
+
+
 <p>请参阅<a href="https://github.com/click-contrib/click-man#automatic-man-page-installation-with-setuptools-and-pip">click-man文档</a>，了解为什么pip不会自动生成和安装联机帮助页。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果你使用的是Windows，则上述某些命令可能无法实现开箱即用。</p>
 <p>一个快速的解决方案可能是在每个Python命令前加上<code>python -m</code>，如下所示：</p>
-<pre><code>python -m pip install mkdocs
+<div class="codehilite"><pre><span></span><code>python -m pip install mkdocs
 python -m mkdocs
-</code></pre>
+</code></pre></div>
+
+
 <p>对于更永久的解决方案，你可能需要编辑<code>PATH</code>环境变量以包含Python安装的<code>Scripts</code>目录。 最近的Python版本包含一个为你执行此操作的脚本。 切换到Python安装目录（例如<code>C:\Python34 \</code>），打开<code>Tools</code>，然后打开<code>Scripts</code>文件夹，双击运行<code>win_add2path.py</code>文件。 或者，你可以<a href="https://svn.python.org/projects/python/trunk/Tools/scripts/win_add2path.py">下载</a>脚本并运行它（<code>python win_add2path.py</code>）。</p>
 </div>
 <hr />
-<h2 id="_9">入门<a class="headerlink" href="#_9" title="Permanent link"></a></h2>
+<h2 id="_9">入门<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>入门非常简单。</p>
-<pre><code class="bash">mkdocs new my-project
-cd my-project
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs new my-project
+<span class="nb">cd</span> my-project
+</code></pre></div>
 
 <p>花一点时间来回顾一下为你创建的初始项目。</p>
 <p><img alt="The initial MkDocs layout" src="img/initial-layout.png" /></p>
 <p>有一个名为<code>mkdocs.yml</code>的配置文件，以及一个名为<code>docs</code>的文件夹，它将包含你的文档源文件。现在<code>docs</code>文件夹只包含一个名为<code>index.md</code>的文档页面。</p>
 <p>MkDocs附带一个内置的开发服务器，可以让你在处理文档时预览文档。 确保与<code>mkdocs.yml</code>配置文件位于同一目录中，然后通过运行<code>mkdocs serve</code>命令启动服务器：</p>
-<pre><code class="bash">$ mkdocs serve
+<div class="highlight"><pre><span></span><code>$ mkdocs serve
 INFO    -  Building documentation...
 INFO    -  Cleaning site directory
-[I 160402 15:50:43 server:271] Serving on http://127.0.0.1:8000
-[I 160402 15:50:43 handlers:58] Start watching changes
-[I 160402 15:50:43 handlers:60] Start detecting changes
-</code></pre>
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 server:271<span class="o">]</span> Serving on http://127.0.0.1:8000
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:58<span class="o">]</span> Start watching changes
+<span class="o">[</span>I <span class="m">160402</span> <span class="m">15</span>:50:43 handlers:60<span class="o">]</span> Start detecting changes
+</code></pre></div>
 
 <p>在浏览器中打开<code>http://127.0.0.1:8000/</code>，你将看到显示的默认主页：</p>
 <p><img alt="The MkDocs live server" src="img/screenshot.png" /></p>
 <p>开发服务器还支持自动重新加载，并且只要配置文件、文档目录或主题目录中的任何内容发生更改，都将重新生成文档。</p>
 <p>使用你的文本编辑器打开<code>docs/index.md</code>文档，将初始标题更改为“MkLorum”，然后保存更改。浏览器将自动重新加载，你将立即看到更新过的文档。</p>
 <p>现在尝试编辑配置文件：<code>mkdocs.yml</code>。 将<a href="user-guide/configuration/#site_name"><code>site_name</code></a>设置更改为“MkLorum”并保存文件。</p>
-<pre><code class="yaml">site_name: MkLorum
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+</code></pre></div>
 
 <p>你的浏览器应立即重新加载，你将看到新设置的站点名称已经生效。</p>
 <p><img alt="The site_name setting" src="img/site-name.png" /></p>
-<h2 id="_10">添加页面<a class="headerlink" href="#_10" title="Permanent link"></a></h2>
+<h2 id="_10">添加页面<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>现在在文档中添加第二个页面：</p>
-<pre><code class="bash">curl 'https://jaspervdj.be/lorem-markdownum/markdown.txt' &gt; docs/about.md
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;https://jaspervdj.be/lorem-markdownum/markdown.txt&#39;</span> &gt; docs/about.md
+</code></pre></div>
 
 <p>由于我们的文档站点将包含一些导航，你可以编辑配置文件，并通过添加<a href="user-guide/configuration/#nav"><code>nav</code></a>设置来管理每个页面导航的顺序、标题和嵌套情况：</p>
-<pre><code class="yaml">site_name: MkLorum
-nav:
-    - Home: index.md
-    - About: about.md
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+<span class="nt">nav</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">About</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">about.md</span>
+</code></pre></div>
 
 <p>保存更改，你将看到左侧有“Home”和“About”导航栏，同时右侧还有“Search”，“Previous”和“Next”。</p>
 <p><img alt="Screenshot" src="img/multipage.png" /></p>
 <p>尝试菜单项并在页面之间来回导航。 然后单击<code>Search</code>。 将出现一个搜索对话框，允许你搜索任何页面上的任何文本。 请注意，搜索结果包括网站上每次出现的搜索字词，并直接链接到搜索字词所在页面的部分。你无需付出任何努力或配置即可获得所有这些！</p>
 <p><img alt="Screenshot" src="img/search.png" /></p>
-<h2 id="_11">主题化我们的文档<a class="headerlink" href="#_11" title="Permanent link"></a></h2>
+<h2 id="_11">主题化我们的文档<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>现在，更改配置文件以通过更改主题来更改文档的显示方式。 编辑<code>mkdocs.yml</code>文件并添加<a href="user-guide/configuration/#theme"><code>theme</code></a>设置：</p>
-<pre><code class="yaml">site_name: MkLorum
-nav:
-    - Home: index.md
-    - About: about.md
-theme: readthedocs
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MkLorum</span>
+<span class="nt">nav</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">index.md</span>
+    <span class="p p-Indicator">-</span> <span class="nt">About</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">about.md</span>
+<span class="nt">theme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">readthedocs</span>
+</code></pre></div>
 
 <p>保存更改，你将看到改为使用了ReadTheDocs主题。</p>
 <p><img alt="Screenshot" src="img/readthedocs.png" /></p>
-<h2 id="favicon">更改Favicon图标<a class="headerlink" href="#favicon" title="Permanent link"></a></h2>
+<h2 id="favicon">更改Favicon图标<a class="headerlink" href="#favicon" title="Permanent link">&para;</a></h2>
 <p>默认情况下，MkDocs使用<a href="/img/favicon.ico">MkDocs favicon</a>图标。 要使用不同的图标，请在<code>docs_dir</code>中创建一个<code>img</code>子目录，并将自定义的<code>favicon.ico</code>文件复制到该目录。 MkDocs将自动检测并使用该文件作为你的favicon图标。</p>
-<h2 id="_12">生成网站<a class="headerlink" href="#_12" title="Permanent link"></a></h2>
+<h2 id="_12">生成网站<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
 <p>那看起来不错。 你已准备好部署<code>MkLorum</code>文档。 首先生成文档：</p>
-<pre><code class="bash">mkdocs build
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build
+</code></pre></div>
 
 <p>这将创建一个名为<code>site</code>的新目录。 看一下该目录的情况：</p>
-<pre><code class="bash">$ ls site
+<div class="highlight"><pre><span></span><code>$ ls site
 about  fonts  index.html  license  search.html
 css    img    js          mkdocs   sitemap.xml
-</code></pre>
+</code></pre></div>
 
 <p>请注意，你的源文档已输出为两个名为<code>index.html</code>和<code>about/index.html</code>的HTML文件。同时各种其他媒体文件也已被复制到<code>site</code>目录中作为文档主题的一部分。另外还有一个<code>sitemap.xml</code>文件和<code>mkdocs/search_index.json</code>。</p>
 <p>如果你正在使用版本控制软件，例如<code>git</code>，你可能不希望将生成的文件包含到存储库中。只需要在<code>.gitignore</code>文件中添加一行<code>site/</code>即可。</p>
-<pre><code class="bash">echo &quot;site/&quot; &gt;&gt; .gitignore
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;site/&quot;</span> &gt;&gt; .gitignore
+</code></pre></div>
 
 <p>如果你正在使用其他版本控制工具，请你自行查阅相关文档，了解如何忽略特定目录。</p>
 <p>一段时间后，文件可能会从文档中删除，但它们仍将驻留在<code>site</code>目录中。 要删除那些陈旧的文件，只需在运行<code>mkdocs</code>命令时带上<code>--clean</code>参数即可。</p>
-<pre><code class="bash">mkdocs build --clean
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build --clean
+</code></pre></div>
 
-<h2 id="_13">其他命令和选项<a class="headerlink" href="#_13" title="Permanent link"></a></h2>
+<h2 id="_13">其他命令和选项<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>还有其他各种命令和选项。有关命令的完整列表，请使用<code>--help</code>标志：</p>
-<pre><code class="bash">mkdocs --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs --help
+</code></pre></div>
 
 <p>要查看给定命令上可用的选项列表，请使用带有该命令的<code>--help</code>标志。 例如，要获取<code>build</code>命令可用的所有选项的列表，请运行以下命令：</p>
-<pre><code class="bash">mkdocs build --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>mkdocs build --help
+</code></pre></div>
 
-<h2 id="_14">部署<a class="headerlink" href="#_14" title="Permanent link"></a></h2>
+<h2 id="_14">部署<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>你刚刚生成的文档站点仅使用静态文件，因此你几乎可以在任何地方托管它。 <a href="https://help.github.com/articles/creating-project-pages-manually/">GitHub project pages</a>和<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Amazon S3</a>是个很不错的托管地方，具体取决于你的需求。 将整个<code>site</code>目录的内容上传到你托管网站的地方，然后就完成了。 有关常见主机的具体说明，请参阅<a href="user-guide/deploying-your-docs/">部署文档</a>页面。</p>
-<h2 id="_15">获取帮助<a class="headerlink" href="#_15" title="Permanent link"></a></h2>
-<p>要获取关于MkDocs的帮助，请使用<a href="https://groups.google.com/forum/#!forum/mkdocs">discussion group</a>、<a href="https://github.com/mkdocs/mkdocs/issues">GitHub issues</a>或者freenode上的MkDocs IRC频道-<code>#mkdocs</code>。</p></div>
-            </div>
-        </div>
+<h2 id="_15">获取帮助<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>要获取关于MkDocs的帮助，请使用<a href="https://groups.google.com/forum/#!forum/mkdocs">discussion group</a>、<a href="https://github.com/mkdocs/mkdocs/issues">GitHub issues</a>或者freenode上的MkDocs IRC频道-<code>#mkdocs</code>。</p>
+                
+              
+              
+                
 
-        <footer class="col-md-12">
-            <hr>
-                <p>Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>. <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备19036239号</a></p>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = ".",
-                shortcuts = {"next": 78, "help": 191, "previous": 80, "search": 83};
-        </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+              
+            </article>
+          </div>
         </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="user-guide/writing-your-docs/" class="md-footer__link md-footer__link--next" aria-label="Next: 编写文档" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              编写文档
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2014 <a href="https://twitter.com/_tomchristie">Tom Christie</a>, Maintained by the <a href="/about/release-notes/#maintenance-team">MkDocs Team</a>. <a href="http://www.beian.miit.gov.cn" target="_blank">qq号</a>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="mailto:<email-address>" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M476 3.2 12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+      </a>
+    
+  </div>
+
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+  </div>
+</footer>
+      
     </div>
-</div>
-
-    </body>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "version": null, "features": [], "search": "assets/javascripts/workers/search.709b4209.min.js", "translations": {"search.result.placeholder": "Type to start searching", "search.config.separator": "[\\s\\-]+", "search.result.none": "No matching documents", "search.result.term.missing": "Missing", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.placeholder": "Search", "select.version.title": "Select version", "search.result.one": "1 matching document", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.result.more.other": "# more on this page", "search.result.other": "# matching documents", "search.config.pipeline": "trimmer, stopWordFilter"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.29db7785.min.js"></script>
+      
+    
+  </body>
 </html>
-
-<!--
-MkDocs version : 1.1.2
-Build Date UTC : 2021-10-10 12:36:17.226025+00:00
--->
